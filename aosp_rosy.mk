@@ -21,12 +21,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from rosy device
 $(call inherit-product, device/xiaomi/rosy/device.mk)
 
+# Add Miui 10 Camera
+$(call inherit-product, vendor/xiaomi/MiuiCamera/rosy.mk)
+
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+# Pixel Experience changes
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_GAPPS_ARCH := arm64
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rosy
-PRODUCT_NAME := lineage_rosy
+PRODUCT_NAME := aosp_rosy
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 5
 PRODUCT_MANUFACTURER := Xiaomi
