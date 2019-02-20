@@ -25,11 +25,14 @@ $(call inherit-product, device/xiaomi/rosy/device.mk)
 $(call inherit-product, vendor/xiaomi/MiuiCamera/rosy.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common.mk)
 
 # Pixel Experience changes
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_GAPPS_ARCH := arm64
+
+# Inherit from our common CAF device tree.
+include device/qcom/common/common.mk
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rosy
