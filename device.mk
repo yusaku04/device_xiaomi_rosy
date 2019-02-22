@@ -304,6 +304,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      power.qcom
 
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
@@ -313,7 +317,6 @@ PRODUCT_COPY_FILES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
-	
 #QTI performance
 PRODUCT_BOOT_JARS += \
     QPerformance \
